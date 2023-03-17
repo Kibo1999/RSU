@@ -1,23 +1,21 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-Random rand = new Random();
+﻿using System;
 
-for (int i = 0; i < 10; i++)
+namespace RSU // Note: actual namespace depends on the project name.
 {
-    int int1 = rand.Next();
-    int int2 = rand.Next();
+    using Newtonsoft.Json;
 
-    if (int1 > int2)
+    internal class Program
     {
-        Console.WriteLine($"int1 maior! {int1}");
+        static void Main(string[] args)
+        {
+            var myJsonString = File.ReadAllText("rsu3sinais.json");
+            var myJson = JsonConvert.DeserializeObject(myJsonString);
+
+            //Console.WriteLine(myJsonString);
+            Console.WriteLine(myJson);
+        }
     }
-    else
-    {
-        Console.WriteLine($"int2 maior! {int2}");
-    }
-
-    Console.WriteLine($"int1: {int1} int2: {int2}");
-
-    Console.WriteLine("");
-
 }
+
+
+
