@@ -1,9 +1,12 @@
-﻿using System;
-
-namespace RSU // Note: actual namespace depends on the project name.
+﻿namespace RSU // Note: actual namespace depends on the project name.
 {
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
+    using RSU.JSonMessage;
+    using System;
+    using System.Diagnostics;
+    using System.Runtime.CompilerServices;
+    using System.Threading;
 
     internal class Program
     {
@@ -16,12 +19,16 @@ namespace RSU // Note: actual namespace depends on the project name.
             int appInterval = (int) myJson["data"]["ITSAPP"]["Facilities"]["AppInterval"];
 
             Console.WriteLine($"AppInterval : {appInterval} ");
-
             while (true)
             {
-                Console.WriteLine("Sending message to server...");
-                Console.WriteLine($"Current time: {DateTime.Now.TimeOfDay}");
-                System.Threading.Thread.Sleep( appInterval );
+                Thread thread = new Thread(() =>
+                {
+                    Console.WriteLine("Sending message to server...");
+                    Console.WriteLine($"Current time: {DateTime.Now.TimeOfDay}");
+                });
+                thread.Start();
+                Console.WriteLine($"Current number of threads: {Process.GetCurrentProcess().Threads.Count}");
+                Thread.Sleep(appInterval);
             }
         }
     }
