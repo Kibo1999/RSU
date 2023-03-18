@@ -12,6 +12,7 @@
         static void Main(string[] args)
         {
             var myJsonString = File.ReadAllText("rsu3sinais.json");
+            Console.WriteLine("asdsad");
             JSonMessages myJson = JsonConvert.DeserializeObject<JSonMessages>(myJsonString);
 
             //getting appInterval

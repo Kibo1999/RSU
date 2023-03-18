@@ -9,10 +9,11 @@
 
   <ItemGroup>
     <PackageReference Include="Json.Net" Version="1.0.33" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EncoderIvi-master\EncoderIvi\EncoderIvi.csproj" />
+    <ProjectReference Include="..\EncoderIvi-master\EncoderIvi-master\EncoderIvi\EncoderIvi.csproj" />
   </ItemGroup>
 
   <ItemGroup>
