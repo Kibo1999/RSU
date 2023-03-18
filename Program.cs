@@ -5,7 +5,6 @@
     using RSU.JSonMessage;
     using System;
     using System.Diagnostics;
-    using System.Runtime.CompilerServices;
     using System.Threading;
 
     internal class Program
@@ -13,11 +12,12 @@
         static void Main(string[] args)
         {
             var myJsonString = File.ReadAllText("rsu3sinais.json");
-            JObject myJson = (JObject) JsonConvert.DeserializeObject(myJsonString);
+            JSonMessages myJson = JsonConvert.DeserializeObject<JSonMessages>(myJsonString);
 
             //getting appInterval
-            int appInterval = (int) myJson["data"]["ITSAPP"]["Facilities"]["AppInterval"];
-
+            int appInterval = myJson.data.ITSAPP.facilities.appinterval;
+            ITSAPP app = myJson.data.ITSAPP;
+            Console.WriteLine(app);
             Console.WriteLine($"AppInterval : {appInterval} ");
             while (true)
             {
@@ -30,6 +30,7 @@
                 Console.WriteLine($"Current number of threads: {Process.GetCurrentProcess().Threads.Count}");
                 Thread.Sleep(appInterval);
             }
+            
         }
     }
 }
