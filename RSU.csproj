@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EncoderIvi-master\EncoderIvi\EncoderIvi.csproj" />
+    <ProjectReference Include="..\EncoderIvi\EncoderIvi\EncoderIvi.csproj" />
   </ItemGroup>
 
   <ItemGroup>

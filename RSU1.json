@@ -1,0 +1,919 @@
+{
+  "data": {
+    "virtualRSU": {
+      "virtualStationID": 1,
+      "reference": "RSU1",
+      "description": "awaa",
+      "referencePosition": {
+        "lat": 39733932,
+        "lng": -8822016
+      },
+      "range": 50,
+      "timeStamp": "2023-03-21T23:19:56.774201Z"
+    },
+    "ITSAPP": {
+      "enabled": true,
+      "Facilities": {
+        "enabled": true,
+        "AppInterval": 2000,
+        "IVIMAPP": [
+          {
+            "enabled": true,
+            "ivim": {
+              "header": {
+                "protocolVersion": 0,
+                "messageID": 6,
+                "stationID": 0
+              },
+              "ivi": [
+                {
+                  "mandatory": {
+                    "serviceProviderId": {
+                      "countryCode": "351\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+                      "providerIdentifier": 0
+                    },
+                    "iviIdentificationNumber": 0,
+                    "timeStamp": null,
+                    "validFrom": null,
+                    "validTo": null,
+                    "connectedIviStructures": null,
+                    "iviStatus": 0
+                  },
+                  "optional": [
+                    {
+                      "IviContainer": {
+                        "glc": {
+                          "referencePosition": {
+                            "lat": 39734030,
+                            "lng": -8821898,
+                            "positionConfidenceElipse": {
+                              "semiMajorConfidence": 0,
+                              "semiMinorConfidence": 0,
+                              "semiMajorOrientation": 0
+                            },
+                            "altitude": {
+                              "altitudeValue": 0,
+                              "altitudeConfidence": 15
+                            }
+                          },
+                          "referencePositionTime": null,
+                          "parts": {
+                            "GlcPart": [
+                              {
+                                "zoneId": 10,
+                                "laneNumber": null,
+                                "zoneExtension": null,
+                                "zoneHeading": null,
+                                "zone": {
+                                  "segment": {
+                                    "line": {
+                                      "deltaPositions": {
+                                        "DeltaPosition": [
+                                          {
+                                            "deltaLatitude": 1,
+                                            "deltaLongitude": -5
+                                          },
+                                          {
+                                            "deltaLatitude": 22,
+                                            "deltaLongitude": -23
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "laneWidth": null
+                                  }
+                                }
+                              },
+                              {
+                                "zoneId": 11,
+                                "laneNumber": null,
+                                "zoneExtension": null,
+                                "zoneHeading": null,
+                                "zone": {
+                                  "segment": {
+                                    "line": {
+                                      "deltaPositions": {
+                                        "DeltaPosition": [
+                                          {
+                                            "deltaLatitude": 3,
+                                            "deltaLongitude": -2
+                                          },
+                                          {
+                                            "deltaLatitude": 15,
+                                            "deltaLongitude": -14
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "laneWidth": null
+                                  }
+                                }
+                              },
+                              {
+                                "zoneId": 12,
+                                "laneNumber": null,
+                                "zoneExtension": null,
+                                "zoneHeading": null,
+                                "zone": {
+                                  "segment": {
+                                    "line": {
+                                      "deltaPositions": {
+                                        "DeltaPosition": [
+                                          {
+                                            "deltaLatitude": 3,
+                                            "deltaLongitude": 2
+                                          },
+                                          {
+                                            "deltaLatitude": 31,
+                                            "deltaLongitude": -28
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "laneWidth": null
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "giv": [
+                          {
+                            "GicPart": {
+                              "detectionZoneIds": [
+                                {
+                                  "Zid": 10
+                                }
+                              ],
+                              "relevanceZoneIds": [
+                                {
+                                  "Zid": 12
+                                }
+                              ],
+                              "direction": null,
+                              "minimumAwarenessTime": null,
+                              "iviType": 1,
+                              "iviPurpose": null,
+                              "laneStatus": null,
+                              "driverCharacteristics": null,
+                              "layoutId": null,
+                              "preStoredlayoutId": null,
+                              "roadSignCodes": [
+                                {
+                                  "RSCode": {
+                                    "layoutComponentId": null,
+                                    "code": {
+                                      "iso14823": {
+                                        "pictogramCode": {
+                                          "countryCode": null,
+                                          "serviceCategoryCode": {
+                                            "trafficSignPictogram": 1
+                                          },
+                                          "pictogramCategoryCode": {
+                                            "nature": 5,
+                                            "serialNumber": 28
+                                          }
+                                        },
+                                        "attributes": [
+                                          {
+                                            "DTM": {
+                                              "year": {
+                                                "yearRangeStartYear": null,
+                                                "yearRangeEndYear": null
+                                              },
+                                              "month_day": {
+                                                "dateRangeStartMonthDay": {
+                                                  "month": null,
+                                                  "day": null
+                                                },
+                                                "dateRangeEndMonthDay": {
+                                                  "month": null,
+                                                  "day": null
+                                                }
+                                              },
+                                              "repeatingPeriodDayTypes": null,
+                                              "hourMinutes": {
+                                                "timeRangeStartTime": {
+                                                  "hours": null,
+                                                  "mins": null
+                                                },
+                                                "timeRangeEndTime": {
+                                                  "hours": null,
+                                                  "mins": null
+                                                }
+                                              },
+                                              "dateRangeOfWeek": null,
+                                              "durationHourMinute": {
+                                                "hours": null,
+                                                "mins": null
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "EDT": {
+                                              "year": {
+                                                "yearRangeStartYear": null,
+                                                "yearRangeEndYear": null
+                                              },
+                                              "month_day": {
+                                                "dateRangeStartMonthDay": {
+                                                  "month": null,
+                                                  "day": null
+                                                },
+                                                "dateRangeEndMonthDay": {
+                                                  "month": null,
+                                                  "day": null
+                                                }
+                                              },
+                                              "repeatingPeriodDayTypes": null,
+                                              "hourMinutes": {
+                                                "timeRangeStartTime": {
+                                                  "hours": null,
+                                                  "mins": null
+                                                },
+                                                "timeRangeEndTime": {
+                                                  "hours": null,
+                                                  "mins": null
+                                                }
+                                              },
+                                              "dateRangeOfWeek": null,
+                                              "durationHourMinute": {
+                                                "hours": null,
+                                                "mins": null
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "VED": {
+                                              "vehicleHeight": {
+                                                "value": null,
+                                                "unit": null
+                                              },
+                                              "vehicleWidth": {
+                                                "value": null,
+                                                "unit": null
+                                              },
+                                              "vehicleLength": {
+                                                "value": null,
+                                                "unit": null
+                                              },
+                                              "vehicleWeight": {
+                                                "value": null,
+                                                "unit": 11
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "itisCodes": null
+                                      },
+                                      "itisCode": null
+                                    }
+                                  }
+                                }
+                              ],
+                              "extraText": [
+
+                              ]
+                            }
+                          }
+                        ],
+                        "tc": [
+                          {
+                            "TcPart": {
+                              "DetectionZone": [
+                                {
+                                  "Zid": 10
+                                }
+                              ],
+                              "RelevanceZone": [
+                                {
+                                  "Zid": 12
+                                }
+                              ],
+                              "Direction": null,
+                              "minimumAwarenessZoneIds": null,
+                              "layoutId": null,
+                              "preStoredlayoutId": null,
+                              "text": [
+
+                              ],
+                              "data": "2023-02-17T12:45:48.000000Z"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "enabled": true,
+            "ivim": {
+              "header": {
+                "protocolVersion": 0,
+                "messageID": 6,
+                "stationID": 0
+              },
+              "ivi": [
+                {
+                  "mandatory": {
+                    "serviceProviderId": {
+                      "countryCode": "351\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+                      "providerIdentifier": 0
+                    },
+                    "iviIdentificationNumber": 0,
+                    "timeStamp": null,
+                    "validFrom": null,
+                    "validTo": null,
+                    "connectedIviStructures": null,
+                    "iviStatus": 0
+                  },
+                  "optional": [
+                    {
+                      "IviContainer": {
+                        "glc": {
+                          "referencePosition": {
+                            "lat": 39734081,
+                            "lng": -8822119,
+                            "positionConfidenceElipse": {
+                              "semiMajorConfidence": 0,
+                              "semiMinorConfidence": 0,
+                              "semiMajorOrientation": 0
+                            },
+                            "altitude": {
+                              "altitudeValue": 0,
+                              "altitudeConfidence": 15
+                            }
+                          },
+                          "referencePositionTime": null,
+                          "parts": {
+                            "GlcPart": [
+                              {
+                                "zoneId": 7,
+                                "laneNumber": null,
+                                "zoneExtension": null,
+                                "zoneHeading": null,
+                                "zone": {
+                                  "segment": {
+                                    "line": {
+                                      "deltaPositions": {
+                                        "DeltaPosition": [
+                                          {
+                                            "deltaLatitude": 2,
+                                            "deltaLongitude": -6
+                                          },
+                                          {
+                                            "deltaLatitude": 3,
+                                            "deltaLongitude": -13
+                                          },
+                                          {
+                                            "deltaLatitude": 9,
+                                            "deltaLongitude": -20
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "laneWidth": null
+                                  }
+                                }
+                              },
+                              {
+                                "zoneId": 8,
+                                "laneNumber": null,
+                                "zoneExtension": null,
+                                "zoneHeading": null,
+                                "zone": {
+                                  "segment": {
+                                    "line": {
+                                      "deltaPositions": {
+                                        "DeltaPosition": [
+                                          {
+                                            "deltaLatitude": 1,
+                                            "deltaLongitude": -7
+                                          },
+                                          {
+                                            "deltaLatitude": 2,
+                                            "deltaLongitude": -16
+                                          },
+                                          {
+                                            "deltaLatitude": 9,
+                                            "deltaLongitude": -23
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "laneWidth": null
+                                  }
+                                }
+                              },
+                              {
+                                "zoneId": 9,
+                                "laneNumber": null,
+                                "zoneExtension": null,
+                                "zoneHeading": null,
+                                "zone": {
+                                  "segment": {
+                                    "line": {
+                                      "deltaPositions": {
+                                        "DeltaPosition": [
+                                          {
+                                            "deltaLatitude": -3,
+                                            "deltaLongitude": -7
+                                          },
+                                          {
+                                            "deltaLatitude": 0,
+                                            "deltaLongitude": -19
+                                          },
+                                          {
+                                            "deltaLatitude": 9,
+                                            "deltaLongitude": -27
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "laneWidth": null
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "giv": [
+                          {
+                            "GicPart": {
+                              "detectionZoneIds": [
+                                {
+                                  "Zid": 7
+                                }
+                              ],
+                              "relevanceZoneIds": [
+                                {
+                                  "Zid": 9
+                                }
+                              ],
+                              "direction": null,
+                              "minimumAwarenessTime": null,
+                              "iviType": 1,
+                              "iviPurpose": null,
+                              "laneStatus": null,
+                              "driverCharacteristics": null,
+                              "layoutId": null,
+                              "preStoredlayoutId": null,
+                              "roadSignCodes": [
+                                {
+                                  "RSCode": {
+                                    "layoutComponentId": null,
+                                    "code": {
+                                      "iso14823": {
+                                        "pictogramCode": {
+                                          "countryCode": null,
+                                          "serviceCategoryCode": {
+                                            "trafficSignPictogram": 1
+                                          },
+                                          "pictogramCategoryCode": {
+                                            "nature": 5,
+                                            "serialNumber": 28
+                                          }
+                                        },
+                                        "attributes": [
+                                          {
+                                            "DTM": {
+                                              "year": {
+                                                "yearRangeStartYear": 2014,
+                                                "yearRangeEndYear": 2020
+                                              },
+                                              "month_day": {
+                                                "dateRangeStartMonthDay": {
+                                                  "month": 2,
+                                                  "day": 3
+                                                },
+                                                "dateRangeEndMonthDay": {
+                                                  "month": 2,
+                                                  "day": 17
+                                                }
+                                              },
+                                              "repeatingPeriodDayTypes": "Even Days",
+                                              "hourMinutes": {
+                                                "timeRangeStartTime": {
+                                                  "hours": 10,
+                                                  "mins": 12
+                                                },
+                                                "timeRangeEndTime": {
+                                                  "hours": 4,
+                                                  "mins": 12
+                                                }
+                                              },
+                                              "dateRangeOfWeek": "Thursday",
+                                              "durationHourMinute": {
+                                                "hours": 13,
+                                                "mins": 13
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "EDT": {
+                                              "year": {
+                                                "yearRangeStartYear": null,
+                                                "yearRangeEndYear": null
+                                              },
+                                              "month_day": {
+                                                "dateRangeStartMonthDay": {
+                                                  "month": 3,
+                                                  "day": 3
+                                                },
+                                                "dateRangeEndMonthDay": {
+                                                  "month": 3,
+                                                  "day": 3
+                                                }
+                                              },
+                                              "repeatingPeriodDayTypes": "Even Days",
+                                              "hourMinutes": {
+                                                "timeRangeStartTime": {
+                                                  "hours": 17,
+                                                  "mins": 3
+                                                },
+                                                "timeRangeEndTime": {
+                                                  "hours": 3,
+                                                  "mins": 4
+                                                }
+                                              },
+                                              "dateRangeOfWeek": "Wednesday",
+                                              "durationHourMinute": {
+                                                "hours": 15,
+                                                "mins": 13
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "DFLType": 1
+                                          },
+                                          {
+                                            "VED": {
+                                              "vehicleHeight": {
+                                                "value": null,
+                                                "unit": null
+                                              },
+                                              "vehicleWidth": {
+                                                "value": null,
+                                                "unit": null
+                                              },
+                                              "vehicleLength": {
+                                                "value": null,
+                                                "unit": null
+                                              },
+                                              "vehicleWeight": {
+                                                "value": null,
+                                                "unit": null
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "itisCodes": null
+                                      },
+                                      "itisCode": null
+                                    }
+                                  }
+                                }
+                              ],
+                              "extraText": [
+
+                              ]
+                            }
+                          }
+                        ],
+                        "tc": [
+                          {
+                            "TcPart": {
+                              "DetectionZone": [
+                                {
+                                  "Zid": 7
+                                }
+                              ],
+                              "RelevanceZone": [
+                                {
+                                  "Zid": 9
+                                }
+                              ],
+                              "Direction": null,
+                              "minimumAwarenessZoneIds": null,
+                              "layoutId": null,
+                              "preStoredlayoutId": null,
+                              "text": [
+
+                              ],
+                              "data": "2023-02-27T12:13:06.000000Z"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "enabled": true,
+            "ivim": {
+              "header": {
+                "protocolVersion": 0,
+                "messageID": 6,
+                "stationID": 0
+              },
+              "ivi": [
+                {
+                  "mandatory": {
+                    "serviceProviderId": {
+                      "countryCode": "351\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
+                      "providerIdentifier": 0
+                    },
+                    "iviIdentificationNumber": 0,
+                    "timeStamp": null,
+                    "validFrom": null,
+                    "validTo": null,
+                    "connectedIviStructures": null,
+                    "iviStatus": 0
+                  },
+                  "optional": [
+                    {
+                      "IviContainer": {
+                        "glc": {
+                          "referencePosition": {
+                            "lat": 39733672,
+                            "lng": -8821552,
+                            "positionConfidenceElipse": {
+                              "semiMajorConfidence": 0,
+                              "semiMinorConfidence": 0,
+                              "semiMajorOrientation": 0
+                            },
+                            "altitude": {
+                              "altitudeValue": 0,
+                              "altitudeConfidence": 15
+                            }
+                          },
+                          "referencePositionTime": null,
+                          "parts": {
+                            "GlcPart": [
+                              {
+                                "zoneId": 13,
+                                "laneNumber": null,
+                                "zoneExtension": null,
+                                "zoneHeading": null,
+                                "zone": {
+                                  "segment": {
+                                    "line": {
+                                      "deltaPositions": {
+                                        "DeltaPosition": [
+                                          {
+                                            "deltaLatitude": -33,
+                                            "deltaLongitude": 30
+                                          },
+                                          {
+                                            "deltaLatitude": -7,
+                                            "deltaLongitude": 7
+                                          },
+                                          {
+                                            "deltaLatitude": 12,
+                                            "deltaLongitude": -13
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "laneWidth": null
+                                  }
+                                }
+                              },
+                              {
+                                "zoneId": 14,
+                                "laneNumber": null,
+                                "zoneExtension": null,
+                                "zoneHeading": null,
+                                "zone": {
+                                  "segment": {
+                                    "line": {
+                                      "deltaPositions": {
+                                        "DeltaPosition": [
+                                          {
+                                            "deltaLatitude": -32,
+                                            "deltaLongitude": 34
+                                          },
+                                          {
+                                            "deltaLatitude": 16,
+                                            "deltaLongitude": -12
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "laneWidth": null
+                                  }
+                                }
+                              },
+                              {
+                                "zoneId": 15,
+                                "laneNumber": null,
+                                "zoneExtension": null,
+                                "zoneHeading": null,
+                                "zone": {
+                                  "segment": {
+                                    "line": {
+                                      "deltaPositions": {
+                                        "DeltaPosition": [
+                                          {
+                                            "deltaLatitude": -33,
+                                            "deltaLongitude": 30
+                                          },
+                                          {
+                                            "deltaLatitude": 12,
+                                            "deltaLongitude": -13
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "laneWidth": null
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "giv": [
+                          {
+                            "GicPart": {
+                              "detectionZoneIds": [
+                                {
+                                  "Zid": 13
+                                }
+                              ],
+                              "relevanceZoneIds": [
+                                {
+                                  "Zid": 15
+                                }
+                              ],
+                              "direction": null,
+                              "minimumAwarenessTime": null,
+                              "iviType": 1,
+                              "iviPurpose": null,
+                              "laneStatus": null,
+                              "driverCharacteristics": null,
+                              "layoutId": null,
+                              "preStoredlayoutId": null,
+                              "roadSignCodes": [
+                                {
+                                  "RSCode": {
+                                    "layoutComponentId": null,
+                                    "code": {
+                                      "iso14823": {
+                                        "pictogramCode": {
+                                          "countryCode": null,
+                                          "serviceCategoryCode": {
+                                            "trafficSignPictogram": 1
+                                          },
+                                          "pictogramCategoryCode": {
+                                            "nature": 5,
+                                            "serialNumber": 13
+                                          }
+                                        },
+                                        "attributes": [
+                                          {
+                                            "DTM": {
+                                              "year": {
+                                                "yearRangeStartYear": 2014,
+                                                "yearRangeEndYear": 2020
+                                              },
+                                              "month_day": {
+                                                "dateRangeStartMonthDay": {
+                                                  "month": 2,
+                                                  "day": 3
+                                                },
+                                                "dateRangeEndMonthDay": {
+                                                  "month": 2,
+                                                  "day": 17
+                                                }
+                                              },
+                                              "repeatingPeriodDayTypes": "Even Days",
+                                              "hourMinutes": {
+                                                "timeRangeStartTime": {
+                                                  "hours": 10,
+                                                  "mins": 12
+                                                },
+                                                "timeRangeEndTime": {
+                                                  "hours": 4,
+                                                  "mins": 12
+                                                }
+                                              },
+                                              "dateRangeOfWeek": "Thursday",
+                                              "durationHourMinute": {
+                                                "hours": 13,
+                                                "mins": 13
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "EDT": {
+                                              "year": {
+                                                "yearRangeStartYear": null,
+                                                "yearRangeEndYear": null
+                                              },
+                                              "month_day": {
+                                                "dateRangeStartMonthDay": {
+                                                  "month": 3,
+                                                  "day": 3
+                                                },
+                                                "dateRangeEndMonthDay": {
+                                                  "month": 3,
+                                                  "day": 3
+                                                }
+                                              },
+                                              "repeatingPeriodDayTypes": "Even Days",
+                                              "hourMinutes": {
+                                                "timeRangeStartTime": {
+                                                  "hours": 17,
+                                                  "mins": 3
+                                                },
+                                                "timeRangeEndTime": {
+                                                  "hours": 3,
+                                                  "mins": 4
+                                                }
+                                              },
+                                              "dateRangeOfWeek": "Wednesday",
+                                              "durationHourMinute": {
+                                                "hours": 15,
+                                                "mins": 13
+                                              }
+                                            }
+                                          },
+                                          {
+                                            "DFLType": 2
+                                          },
+                                          {
+                                            "VED": {
+                                              "vehicleHeight": {
+                                                "value": null,
+                                                "unit": null
+                                              },
+                                              "vehicleWidth": {
+                                                "value": null,
+                                                "unit": null
+                                              },
+                                              "vehicleLength": {
+                                                "value": null,
+                                                "unit": null
+                                              },
+                                              "vehicleWeight": {
+                                                "value": null,
+                                                "unit": 10
+                                              }
+                                            }
+                                          }
+                                        ],
+                                        "itisCodes": null
+                                      },
+                                      "itisCode": null
+                                    }
+                                  }
+                                }
+                              ],
+                              "extraText": [
+
+                              ]
+                            }
+                          }
+                        ],
+                        "tc": [
+                          {
+                            "TcPart": {
+                              "DetectionZone": [
+                                {
+                                  "Zid": 13
+                                }
+                              ],
+                              "RelevanceZone": [
+                                {
+                                  "Zid": 15
+                                }
+                              ],
+                              "Direction": null,
+                              "minimumAwarenessZoneIds": null,
+                              "layoutId": null,
+                              "preStoredlayoutId": null,
+                              "text": [
+
+                              ],
+                              "data": "2023-03-16T11:47:06.000000Z"
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

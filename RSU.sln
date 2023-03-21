@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSU", "RSU.csproj", "{860E2862-6027-45AA-AF51-A54BB76BAABC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncoderIvi", "..\EncoderIvi-master\EncoderIvi\EncoderIvi.csproj", "{E7E07FCE-0D49-44E3-BA19-292AE217DCB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EncoderIvi", "..\EncoderIvi\EncoderIvi\EncoderIvi.csproj", "{B00B6101-B466-4FB6-AC8C-7F2CF0995395}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{860E2862-6027-45AA-AF51-A54BB76BAABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{860E2862-6027-45AA-AF51-A54BB76BAABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{860E2862-6027-45AA-AF51-A54BB76BAABC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E7E07FCE-0D49-44E3-BA19-292AE217DCB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E7E07FCE-0D49-44E3-BA19-292AE217DCB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E7E07FCE-0D49-44E3-BA19-292AE217DCB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E7E07FCE-0D49-44E3-BA19-292AE217DCB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B00B6101-B466-4FB6-AC8C-7F2CF0995395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B00B6101-B466-4FB6-AC8C-7F2CF0995395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B00B6101-B466-4FB6-AC8C-7F2CF0995395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B00B6101-B466-4FB6-AC8C-7F2CF0995395}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
