@@ -4,6 +4,7 @@
     using Newtonsoft.Json.Linq;
     using RSU.JSonMessage;
     using System;
+    using System.ComponentModel;
     using System.Diagnostics;
     using System.Threading;
 
@@ -36,7 +37,7 @@
                                     {
                                         Console.WriteLine($"IVI ID:{item.mandatory.iviIdentificationNumber} ");
                                         item.mandatory.timeStamp = DateTime.UtcNow.Ticks;
-                                        Console.WriteLine($"Timestamp:{item.mandatory.timeStamp} ");
+                                        Console.WriteLine($"Timestamp:{new DateTime((long)item.mandatory.timeStamp)} ");
                                     }
                                 }
                                 //Console.WriteLine($"IVI ID:{myFacilities.iVIMAPP[0].ivim.ivi[0].mandatory.iviIdentificationNumber} ");
