@@ -32,7 +32,7 @@
                       "countryCode": "351\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
                       "providerIdentifier": 0
                     },
-                    "iviIdentificationNumber": 0,
+                    "iviIdentificationNumber": 1,
                     "timeStamp": null,
                     "validFrom": null,
                     "validTo": null,
@@ -323,7 +323,7 @@
                       "countryCode": "351\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
                       "providerIdentifier": 0
                     },
-                    "iviIdentificationNumber": 0,
+                    "iviIdentificationNumber": 2,
                     "timeStamp": null,
                     "validFrom": null,
                     "validTo": null,
@@ -629,7 +629,7 @@
                       "countryCode": "351\u0000\u0000\u0000\u0000\u0000\u0000\u0000",
                       "providerIdentifier": 0
                     },
-                    "iviIdentificationNumber": 0,
+                    "iviIdentificationNumber": 3,
                     "timeStamp": null,
                     "validFrom": null,
                     "validTo": null,
