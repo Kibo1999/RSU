@@ -1,5 +1,6 @@
 ﻿namespace RSU // Note: actual namespace depends on the project name.
 {
+    using EncoderIvi.Message;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using RSU.JSonMessage;
@@ -14,15 +15,15 @@
         {
             try
             {
-                string myJsonString = File.ReadAllText("RSU1.json");
-                JSonMessages myJson = JsonConvert.DeserializeObject<JSonMessages>(myJsonString);
+                string jsonInString = File.ReadAllText("RSU1.json");
+                JSonMessages jsonObject = JsonConvert.DeserializeObject<JSonMessages>(jsonInString);
 
-                Facilities myFacilities = myJson.data.ITSAPP.facilities;
-                if (myFacilities != null && myFacilities.enabled)
+                Facilities facilities = jsonObject.data.ITSAPP.facilities;
+                if (facilities != null && facilities.enabled)
                 {
                     
                         //getting appInterval
-                        int appInterval = myFacilities.appinterval;
+                        int appInterval = facilities.appinterval;
                         Console.WriteLine($"AppInterval : {appInterval} ");
                     
                         while (true)
@@ -30,10 +31,9 @@
                             Thread thread = new Thread(() =>
                             {
                                 Console.WriteLine("Sending message to server...");
-                                Console.WriteLine($"Current time: {DateTime.Now.TimeOfDay}");
-                                foreach (var iVIMAPP in myJson.data.ITSAPP.facilities.iVIMAPP)
+                                foreach (IVIMAPP iVIMAPP in facilities.iVIMAPP)
                                 {
-                                    foreach (var item in iVIMAPP.ivim.ivi)
+                                    foreach (Ivi item in iVIMAPP.ivim.ivi)
                                     {
                                         Console.WriteLine($"IVI ID:{item.mandatory.iviIdentificationNumber} ");
                                         item.mandatory.timeStamp = DateTime.UtcNow.Ticks;
@@ -45,7 +45,7 @@
                             });
                             thread.Start();
                             Console.WriteLine($"Current number of threads: {Process.GetCurrentProcess().Threads.Count}");
-                            string jsonStringWrite = JsonConvert.SerializeObject(myJson, Formatting.Indented);
+                            string jsonStringWrite = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
                             File.WriteAllText("RSU1.json", jsonStringWrite);
                         Thread.Sleep(appInterval);
                         }
