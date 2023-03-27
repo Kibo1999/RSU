@@ -1,6 +1,5 @@
 ﻿namespace RSU // Note: actual namespace depends on the project name.
 {
-    using EncoderIvi.Message;
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using RSU.JSonMessage;

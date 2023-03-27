@@ -1,11 +1,9 @@
-﻿using EncoderIvi.Message;
-
-namespace RSU.JSonMessage
+﻿namespace RSU.JSonMessage
 {
     public class IVIMAPP
     {
         public bool enabled { get; set; }
 
-        public EncoderIvi.Message.Data ivim { get; set; }
+        public Ivim ivim { get; set; }
     }
 }

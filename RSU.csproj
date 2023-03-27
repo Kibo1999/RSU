@@ -13,12 +13,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EncoderIvi\EncoderIvi\EncoderIvi.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\EncoderIvi-master\EncoderIvi\libs\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PerEncDec">
+      <HintPath>libs\PerEncDec.dll</HintPath>
     </Reference>
   </ItemGroup>
 
