@@ -32,15 +32,19 @@
                                 Console.WriteLine("Sending message to server...");
                                 foreach (IVIMAPP iVIMAPP in facilities.iVIMAPP)
                                 {
+                                    //converte para binário toda a mensagem IVIM
+                                    Json2PerBitAdapter.Json2Bit(iVIMAPP.ivim); // 
+                                    //procura ficheiro pelo ID do primeiro IVI dentro cada IVIM
+                                    long countBytes = new FileInfo("JSonMessageBin"+ iVIMAPP.ivim.ivi[0].mandatory.iviIdentificationNumber + ".ivi").Length;
+                                    Console.WriteLine($"Número de bytes:{countBytes}");
                                     foreach (Ivi item in iVIMAPP.ivim.ivi)
                                     {
                                         Console.WriteLine($"IVI ID:{item.mandatory.iviIdentificationNumber} ");
-                                        item.mandatory.timeStamp = DateTime.UtcNow.Ticks;
+                                        //item.mandatory.timeStamp = DateTime.UtcNow.Ticks; - solução mais detalhada mas não suportado pelas classes rootIVI por limite de bytes 
+                                        item.mandatory.timeStamp = DateTime.Now.TimeOfDay.Ticks;// apenas dá o tempo sem o dia
                                         Console.WriteLine($"Timestamp:{new DateTime((long)item.mandatory.timeStamp)} ");
                                     }
                                 }
-                                //Console.WriteLine($"IVI ID:{myFacilities.iVIMAPP[0].ivim.ivi[0].mandatory.iviIdentificationNumber} ");
-                                //Console.WriteLine($"Timestamp:{myFacilities.iVIMAPP[0].ivim.ivi[0].mandatory.timeStamp} ");
                             });
                             thread.Start();
                             Console.WriteLine($"Current number of threads: {Process.GetCurrentProcess().Threads.Count}");

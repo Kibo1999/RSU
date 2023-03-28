@@ -4,6 +4,6 @@
     {
         public bool enabled { get; set; }
 
-        public Ivim ivim { get; set; }
+        public Ivim? ivim { get; set; }
     }
 }
