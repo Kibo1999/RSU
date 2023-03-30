@@ -1,4 +1,4 @@
-﻿namespace RSU // Note: actual namespace depends on the project name.
+namespace RSU // Note: actual namespace depends on the project name.
 {
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
@@ -47,7 +47,7 @@
                                 }
                             });
                             thread.Start();
-
+                            //Console.WriteLine($"Current number of threads: {Process.GetCurrentProcess().Threads.Count}");
                             string jsonStringWrite = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
                             File.WriteAllText("RSU1.json", jsonStringWrite);
 
