@@ -12,11 +12,16 @@ namespace RSU
 {
     internal class Message
     {
-        public static void Send(int appInterval, Ivim ivim, JSonMessages jsonObject)
+        public JSonMessages jsonObject { get; set; }
+
+
+        public void Send(int appInterval, Ivim ivim)
         {
+
             Thread thread = new Thread(() =>
             {
-                while (true) {
+                while (true)
+                {
                     //converte para binário toda a mensagem IVIM
                     Json2PerBitAdapter.Json2Bit(ivim);
                     //procura ficheiro pelo ID do primeiro IVI dentro cada IVIM
@@ -30,21 +35,30 @@ namespace RSU
                         Console.WriteLine($"Timestamp:{new DateTime((long)item.mandatory.timeStamp)} ");
                     }
 
-                    while (true)
-                    {
-                        try
-                        {
-                            string jsonStringWrite = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
-                            File.WriteAllText("RSU1.json", jsonStringWrite);
-                            break;
-                        }
-                        catch { }
-                    }
-                    
+                    //cria uma thread só para escrever no ficheiro para manter o tempo entre cada mensagem
+                    Thread threadToWrite = new Thread(() => WriteToFile());
+                    threadToWrite.Start();
+
                     Thread.Sleep(appInterval);
                 }
             });
             thread.Start();
+        }
+
+        private void WriteToFile()
+        {
+            while (true)
+            {
+                try
+                {
+                    string jsonInString = File.ReadAllText("RSU1.json");
+                    jsonObject = JsonConvert.DeserializeObject<JSonMessages>(jsonInString);
+                    string jsonStringWrite = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
+                    File.WriteAllText("RSU1.json", jsonStringWrite);
+                    break;
+                }
+                catch { }
+            }
         }
     }
 }
