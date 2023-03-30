@@ -47,9 +47,10 @@
                                 }
                             });
                             thread.Start();
-                            Console.WriteLine($"Current number of threads: {Process.GetCurrentProcess().Threads.Count}");
+
                             string jsonStringWrite = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
                             File.WriteAllText("RSU1.json", jsonStringWrite);
+
                         Thread.Sleep(appInterval);
                         }
                     }
