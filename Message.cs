@@ -15,23 +15,19 @@ namespace RSU
         public JSonMessages jsonObject { get; set; }
 
 
-        public void Send(int appInterval, List<IVIMAPP> iVIMAPPs)
+        public void Send(int appInterval, Ivim ivim)
         {
-            while (true)
-            {
-                Thread thread = new Thread(() =>
-                {
-            
-                Console.WriteLine("Sending message to server...");
-                foreach (IVIMAPP iVIMAPP in iVIMAPPs)
-                {
 
+            Thread thread = new Thread(() =>
+            {
+                while (true)
+                {
                     //converte para binário toda a mensagem IVIM
-                    Json2PerBitAdapter.Json2Bit(iVIMAPP.ivim);
+                    Json2PerBitAdapter.Json2Bit(ivim);
                     //procura ficheiro pelo ID do primeiro IVI dentro cada IVIM
-                    long countBytes = new FileInfo("JSonMessageBin" + iVIMAPP.ivim.ivi[0].mandatory.iviIdentificationNumber + ".ivi").Length;
+                    long countBytes = new FileInfo("JSonMessageBin" + ivim.ivi[0].mandatory.iviIdentificationNumber + ".ivi").Length;
                     Console.WriteLine($"Número de bytes:{countBytes}");
-                    foreach (Ivi item in iVIMAPP.ivim.ivi)
+                    foreach (Ivi item in ivim.ivi)
                     {
                         Console.WriteLine($"IVI ID:{item.mandatory.iviIdentificationNumber} ");
                         //item.mandatory.timeStamp = DateTime.UtcNow.Ticks; - solução mais detalhada mas não suportado pelas classes rootIVI por limite de bytes 
@@ -43,13 +39,10 @@ namespace RSU
                     Thread threadToWrite = new Thread(() => WriteToFile());
                     threadToWrite.Start();
 
+                    Thread.Sleep(appInterval);
                 }
-
-                });
-       
+            });
             thread.Start();
-            Thread.Sleep(appInterval);
-            }
         }
 
         private void WriteToFile()
