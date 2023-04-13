@@ -17,6 +17,7 @@ namespace RSU
 
         public void Send(int appInterval, Ivim ivim)
         {
+            DateTime unixEpoch = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
 
             Thread thread = new Thread(() =>
             {
@@ -31,11 +32,9 @@ namespace RSU
                     foreach (Ivi item in ivim.ivi)
                     {
                         Console.WriteLine($"IVI ID:{item.mandatory.iviIdentificationNumber} ");
-                        //item.mandatory.timeStamp = DateTime.Now.Ticks;// - solução mais detalhada mas não suportado pelas classes rootIVI por limite de bytes 
-                        //item.mandatory.timeStamp = DateTime.Now.TimeOfDay.Ticks;// apenas dá o tempo sem o dia
-                        //item.mandatory.timeStamp = 1;
+                        //item.mandatory.timeStamp = DateTime.UtcNow.Ticks;// - solução mais detalhada mas não suportado pelas classes rootIVI por limite de bytes 
                         item.mandatory.timeStamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-                        Console.WriteLine($"Timestamp:{new DateTime((long)item.mandatory.timeStamp)} ");
+                        Console.WriteLine($"Timestamp:{unixEpoch.AddMilliseconds((long)item.mandatory.timeStamp)}");
                     }
 
                     //cria uma thread só para escrever no ficheiro para manter o tempo entre cada mensagem
