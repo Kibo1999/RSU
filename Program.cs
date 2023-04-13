@@ -47,8 +47,11 @@
                     Console.WriteLine("Sending message to server...");
                     foreach (IVIMAPP ivimapp in facilities.iVIMAPP)
                     {
-                        Message message = new Message { jsonObject = jsonObject };
-                        message.Send(appInterval, ivimapp.ivim);
+                        //if ivimapp.enabled {
+                            Message message = new Message { jsonObject = jsonObject };
+                            message.Send(appInterval, ivimapp.ivim);
+                        //}
+                        
                     }
                     //string jsonStringWrite = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
                     //File.WriteAllText("RSU1.json", jsonStringWrite);

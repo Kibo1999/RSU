@@ -20,24 +20,27 @@ namespace RSU
 
             Thread thread = new Thread(() =>
             {
+                //converte para binário toda a mensagem IVIM
+                Json2PerBitAdapter.Json2Bit(ivim);
+                //procura ficheiro pelo ID do primeiro IVI dentro cada IVIM
+                long countBytes = new FileInfo("JSonMessageBin" + ivim.ivi[0].mandatory.iviIdentificationNumber + ".ivi").Length;
+                Console.WriteLine($"Número de bytes:{countBytes}");
+
                 while (true)
                 {
-                    //converte para binário toda a mensagem IVIM
-                    Json2PerBitAdapter.Json2Bit(ivim);
-                    //procura ficheiro pelo ID do primeiro IVI dentro cada IVIM
-                    long countBytes = new FileInfo("JSonMessageBin" + ivim.ivi[0].mandatory.iviIdentificationNumber + ".ivi").Length;
-                    Console.WriteLine($"Número de bytes:{countBytes}");
                     foreach (Ivi item in ivim.ivi)
                     {
                         Console.WriteLine($"IVI ID:{item.mandatory.iviIdentificationNumber} ");
-                        //item.mandatory.timeStamp = DateTime.UtcNow.Ticks; - solução mais detalhada mas não suportado pelas classes rootIVI por limite de bytes 
-                        item.mandatory.timeStamp = DateTime.Now.TimeOfDay.Ticks;// apenas dá o tempo sem o dia
+                        //item.mandatory.timeStamp = DateTime.Now.Ticks;// - solução mais detalhada mas não suportado pelas classes rootIVI por limite de bytes 
+                        //item.mandatory.timeStamp = DateTime.Now.TimeOfDay.Ticks;// apenas dá o tempo sem o dia
+                        //item.mandatory.timeStamp = 1;
+                        item.mandatory.timeStamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
                         Console.WriteLine($"Timestamp:{new DateTime((long)item.mandatory.timeStamp)} ");
                     }
 
                     //cria uma thread só para escrever no ficheiro para manter o tempo entre cada mensagem
-                    Thread threadToWrite = new Thread(() => WriteToFile());
-                    threadToWrite.Start();
+                    //Thread threadToWrite = new Thread(() => WriteToFile());
+                    //threadToWrite.Start();
 
                     Thread.Sleep(appInterval);
                 }
