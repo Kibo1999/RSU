@@ -1,4 +1,4 @@
-﻿namespace RSU.JSonMessage
+﻿namespace RSU.JSONIvim
 {
     public class IVIMAPP
     {

@@ -2,7 +2,7 @@ namespace RSU // Note: actual namespace depends on the project name.
 {
     using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
-    using RSU.JSonMessage;
+    using RSU.JSONIvim;
     using System;
     using System.ComponentModel;
     using System.Diagnostics;
@@ -15,7 +15,7 @@ namespace RSU // Note: actual namespace depends on the project name.
             try
             {
                 string jsonInString = File.ReadAllText("RSU1.json");
-                JSonMessages jsonObject = JsonConvert.DeserializeObject<JSonMessages>(jsonInString);
+                JSonMessage jsonObject = JsonConvert.DeserializeObject<JSonMessage>(jsonInString);
                 Facilities facilities = jsonObject.data.ITSAPP.facilities;
                 if (facilities != null && facilities.enabled)
                 {
@@ -26,8 +26,9 @@ namespace RSU // Note: actual namespace depends on the project name.
                     foreach (IVIMAPP ivimapp in facilities.iVIMAPP)
                     {
                         if (ivimapp.enabled) {
-                            Message message = new Message { jsonObject = jsonObject };
-                            message.Send(appInterval, ivimapp.ivim);
+
+                            MessageThread message = new MessageThread(ivimapp,appInterval);
+                            message.Run();
                         }
                         
                     }

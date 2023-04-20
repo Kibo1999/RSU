@@ -2,16 +2,16 @@
 using PerEncDec.IVI;
 using System.Collections;
 using System.Net.Http.Headers;
-using RSU.JSonMessage;
+using RSU.JSONIvim;
 using PerEncDec.IVI.IVIModule;
 using System.ComponentModel;
 
 namespace RSU
 {
-    public static class Json2PerBitAdapter
+    public class Json2PerBitAdapter
     {
 
-        public static void Json2Bit(Ivim deserializedJson)
+        public byte[] Json2Bit(Ivim deserializedJson)
         {
 
             var countryCodeBits = new BitArray(10);
@@ -72,7 +72,7 @@ namespace RSU
 
             //Glc//Parts
             rootIVI.IviField.Optional[0].Glc.Parts = new PerEncDec.IVI.IVIModule.GlcParts();
-            foreach (JSonMessage.GlcPart glcPart in deserializedJson.ivi[0].optional[0].IviContainer.glc.parts.GlcPart)
+            foreach (JSONIvim.GlcPart glcPart in deserializedJson.ivi[0].optional[0].IviContainer.glc.parts.GlcPart)
             {
                 PerEncDec.IVI.IVIModule.GlcPart newPart = new PerEncDec.IVI.IVIModule.GlcPart();
                 newPart.ZoneId = glcPart.zoneId;
@@ -86,7 +86,7 @@ namespace RSU
                 //DeltaPosition
                 if (glcPart.zone.segment.line.deltaPositions is not null) { 
                     newPart.Zone.Segment.Line.DeltaPositions = new PerEncDec.IVI.IVIModule.DeltaPositions();
-                    foreach (JSonMessage.DeltaPosition pairCoordenates in glcPart.zone.segment.line.deltaPositions.DeltaPosition)
+                    foreach (JSONIvim.DeltaPosition pairCoordenates in glcPart.zone.segment.line.deltaPositions.DeltaPosition)
                     {
                         PerEncDec.IVI.IVIModule.DeltaPosition? newCoord = new PerEncDec.IVI.IVIModule.DeltaPosition();
                         newCoord.DeltaLatitude = (long) pairCoordenates.deltaLatitude;
@@ -98,7 +98,7 @@ namespace RSU
                 else if (glcPart.zone.segment.line.absolutePositions is not null)
                 {
                     newPart.Zone.Segment.Line.AbsolutePositions = new PerEncDec.IVI.IVIModule.AbsolutePositions();
-                    foreach (JSonMessage.AbsolutePosition pairCoordenates in glcPart.zone.segment.line.absolutePositions.AbsolutePosition)
+                    foreach (JSONIvim.AbsolutePosition pairCoordenates in glcPart.zone.segment.line.absolutePositions.AbsolutePosition)
                     {
                         PerEncDec.IVI.IVIModule.AbsolutePosition? newCoord = new PerEncDec.IVI.IVIModule.AbsolutePosition();
                         newCoord.Latitude = (long) (pairCoordenates.latitude);
@@ -173,7 +173,7 @@ namespace RSU
                 {
                     rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.Iso14823.Attributes = new ISO14823Attributes();
 
-                    foreach (JSonMessage.Attribute attr in deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823.attributes)
+                    foreach (JSONIvim.Attribute attr in deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823.attributes)
                     {
                         //DTM
                         if (attr.DTM is not null)
@@ -379,11 +379,13 @@ namespace RSU
 
             PerUnalignedCodec codec = new PerUnalignedCodec();
             byte[] ivib = codec.Encode(rootIVI);
+            return ivib;
             //escreve o ficheiro indentificado pelo ID do primeiro IVI dentro desta mensagem IVIM
-            File.WriteAllBytes("JSonMessageBin"+ deserializedJson.ivi[0].mandatory.iviIdentificationNumber +".ivi", ivib);
+            /*File.WriteAllBytes("JSonMessageBin"+ deserializedJson.ivi[0].mandatory.iviIdentificationNumber +".ivi", ivib);
 
             PerEncDec.IVI.IVIMPDUDescriptions.IVIM rootIvi2 = new PerEncDec.IVI.IVIMPDUDescriptions.IVIM();
             codec.Decode(ivib, 0, rootIvi2);
+            */
             
         }     
     }

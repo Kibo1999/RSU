@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RSU.JSonMessage
+namespace RSU.JSONIvim
 {
-    internal class JSonMessages
+    internal class JSonMessage
     {
         public Data data { get; set; }
     }
