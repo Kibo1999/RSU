@@ -39,16 +39,16 @@ namespace RSU
             rootIVI.IviField.Mandatory = new PerEncDec.IVI.IVIModule.IviManagementContainer();
             rootIVI.IviField.Mandatory.ServiceProviderId = new PerEncDec.IVI.EfcDsrcApplication.Provider();
             rootIVI.IviField.Mandatory.ServiceProviderId.CountryCode = new PerEncDec.Asn1.BitString(countryCodeBits);
-            rootIVI.IviField.Mandatory.ServiceProviderId.ProviderIdentifier = deserializedJson.ivi[0].mandatory.serviceProviderId.providerIdentifier;
-            rootIVI.IviField.Mandatory.IviIdentificationNumber = deserializedJson.ivi[0].mandatory.iviIdentificationNumber;
-            rootIVI.IviField.Mandatory.TimeStamp = deserializedJson.ivi[0].mandatory.timeStamp;
-            rootIVI.IviField.Mandatory.ValidFrom = deserializedJson.ivi[0].mandatory.validFrom;
-            rootIVI.IviField.Mandatory.ValidTo = deserializedJson.ivi[0].mandatory.validTo;
+            rootIVI.IviField.Mandatory.ServiceProviderId.ProviderIdentifier = deserializedJson.ivi.mandatory.serviceProviderId.providerIdentifier;
+            rootIVI.IviField.Mandatory.IviIdentificationNumber = deserializedJson.ivi.mandatory.iviIdentificationNumber;
+            rootIVI.IviField.Mandatory.TimeStamp = deserializedJson.ivi.mandatory.timeStamp;
+            rootIVI.IviField.Mandatory.ValidFrom = deserializedJson.ivi.mandatory.validFrom;
+            rootIVI.IviField.Mandatory.ValidTo = deserializedJson.ivi.mandatory.validTo;
 
-            if (deserializedJson .ivi[0].mandatory.connectedIviStructures is not null) {
-                rootIVI.IviField.Mandatory.ConnectedIviStructures.Capacity = (int)deserializedJson.ivi[0].mandatory.connectedIviStructures;
+            if (deserializedJson.ivi.mandatory.connectedIviStructures is not null) {
+                rootIVI.IviField.Mandatory.ConnectedIviStructures.Capacity = (int)deserializedJson.ivi.mandatory.connectedIviStructures;
             }
-            rootIVI.IviField.Mandatory.IviStatus = (int)deserializedJson.ivi[0].mandatory.iviStatus;
+            rootIVI.IviField.Mandatory.IviStatus = (int)deserializedJson.ivi.mandatory.iviStatus;
 
             //Optional
             rootIVI.IviField.Optional = new PerEncDec.IVI.IVIModule.IviContainers
@@ -59,20 +59,20 @@ namespace RSU
             //Glc
             rootIVI.IviField.Optional[0].Glc = new PerEncDec.IVI.IVIModule.GeographicLocationContainer();
             rootIVI.IviField.Optional[0].Glc.ReferencePosition = new PerEncDec.IVI.ITSContainer.ReferencePosition();
-            rootIVI.IviField.Optional[0].Glc.ReferencePosition.Latitude = (long) (deserializedJson.ivi[0].optional[0].IviContainer.glc.referencePosition.lat);
-            rootIVI.IviField.Optional[0].Glc.ReferencePosition.Longitude = (long) (deserializedJson.ivi[0].optional[0].IviContainer.glc.referencePosition.lng);
+            rootIVI.IviField.Optional[0].Glc.ReferencePosition.Latitude = (long) (deserializedJson.ivi.optional[0].IviContainer.glc.referencePosition.lat);
+            rootIVI.IviField.Optional[0].Glc.ReferencePosition.Longitude = (long) (deserializedJson.ivi.optional[0].IviContainer.glc.referencePosition.lng);
             rootIVI.IviField.Optional[0].Glc.ReferencePosition.PositionConfidenceEllipse = new PerEncDec.IVI.ITSContainer.PosConfidenceEllipse();
-            rootIVI.IviField.Optional[0].Glc.ReferencePosition.PositionConfidenceEllipse.SemiMajorConfidence = deserializedJson.ivi[0].optional[0].IviContainer.glc.referencePosition.positionConfidenceElipse.semiMajorConfidence;
-            rootIVI.IviField.Optional[0].Glc.ReferencePosition.PositionConfidenceEllipse.SemiMinorConfidence = deserializedJson.ivi[0].optional[0].IviContainer.glc.referencePosition.positionConfidenceElipse.semiMinorConfidence;
-            rootIVI.IviField.Optional[0].Glc.ReferencePosition.PositionConfidenceEllipse.SemiMajorOrientation = deserializedJson.ivi[0].optional[0].IviContainer.glc.referencePosition.positionConfidenceElipse.semiMajorOrientation;
+            rootIVI.IviField.Optional[0].Glc.ReferencePosition.PositionConfidenceEllipse.SemiMajorConfidence = deserializedJson.ivi.optional[0].IviContainer.glc.referencePosition.positionConfidenceElipse.semiMajorConfidence;
+            rootIVI.IviField.Optional[0].Glc.ReferencePosition.PositionConfidenceEllipse.SemiMinorConfidence = deserializedJson.ivi.optional[0].IviContainer.glc.referencePosition.positionConfidenceElipse.semiMinorConfidence;
+            rootIVI.IviField.Optional[0].Glc.ReferencePosition.PositionConfidenceEllipse.SemiMajorOrientation = deserializedJson.ivi.optional[0].IviContainer.glc.referencePosition.positionConfidenceElipse.semiMajorOrientation;
             rootIVI.IviField.Optional[0].Glc.ReferencePosition.Altitude = new PerEncDec.IVI.ITSContainer.Altitude();
-            rootIVI.IviField.Optional[0].Glc.ReferencePosition.Altitude.AltitudeValue = deserializedJson.ivi[0].optional[0].IviContainer.glc.referencePosition.altitude.altitudeValue;
-            rootIVI.IviField.Optional[0].Glc.ReferencePosition.Altitude.AltitudeConfidence = (PerEncDec.IVI.ITSContainer.AltitudeConfidence)deserializedJson.ivi[0].optional[0].IviContainer.glc.referencePosition.altitude.altitudeConfidence;
-            rootIVI.IviField.Optional[0].Glc.ReferencePositionTime = (long?)deserializedJson.ivi[0].optional[0].IviContainer.glc.referencePositionTime;
+            rootIVI.IviField.Optional[0].Glc.ReferencePosition.Altitude.AltitudeValue = deserializedJson.ivi.optional[0].IviContainer.glc.referencePosition.altitude.altitudeValue;
+            rootIVI.IviField.Optional[0].Glc.ReferencePosition.Altitude.AltitudeConfidence = (PerEncDec.IVI.ITSContainer.AltitudeConfidence)deserializedJson.ivi.optional[0].IviContainer.glc.referencePosition.altitude.altitudeConfidence;
+            rootIVI.IviField.Optional[0].Glc.ReferencePositionTime = (long?)deserializedJson.ivi.optional[0].IviContainer.glc.referencePositionTime;
 
             //Glc//Parts
             rootIVI.IviField.Optional[0].Glc.Parts = new PerEncDec.IVI.IVIModule.GlcParts();
-            foreach (JSONIvim.GlcPart glcPart in deserializedJson.ivi[0].optional[0].IviContainer.glc.parts.GlcPart)
+            foreach (JSONIvim.GlcPart glcPart in deserializedJson.ivi.optional[0].IviContainer.glc.parts.GlcPart)
             {
                 PerEncDec.IVI.IVIModule.GlcPart newPart = new PerEncDec.IVI.IVIModule.GlcPart();
                 newPart.ZoneId = glcPart.zoneId;
@@ -119,61 +119,61 @@ namespace RSU
             };
 
             rootIVI.IviField.Optional[1].Giv[0].DetectionZoneIds = new PerEncDec.IVI.IVIModule.ZoneIds();
-            foreach (DetectionZoneId detectionZoneId in deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.detectionZoneIds)
+            foreach (DetectionZoneId detectionZoneId in deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.detectionZoneIds)
             {
                 rootIVI.IviField.Optional[1].Giv[0].DetectionZoneIds.Add(detectionZoneId.Zid);
             }
 
             rootIVI.IviField.Optional[1].Giv[0].RelevanceZoneIds = new PerEncDec.IVI.IVIModule.ZoneIds();
-            foreach (RelevanceZoneId relevanceZoneId in deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.relevanceZoneIds)
+            foreach (RelevanceZoneId relevanceZoneId in deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.relevanceZoneIds)
             {
                 rootIVI.IviField.Optional[1].Giv[0].RelevanceZoneIds.Add(relevanceZoneId.Zid);
             }
 
-            rootIVI.IviField.Optional[1].Giv[0].Direction = (int?)deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.direction;
-            rootIVI.IviField.Optional[1].Giv[0].MinimumAwarenessTime = (int?)deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.minimumAwarenessTime;
-            rootIVI.IviField.Optional[1].Giv[0].IviType = (int)deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.iviType;
-            rootIVI.IviField.Optional[1].Giv[0].IviPurpose = (int?)deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.iviPurpose;
-            rootIVI.IviField.Optional[1].Giv[0].LaneStatus = (long?)deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.laneStatus;
-            rootIVI.IviField.Optional[1].Giv[0].DriverCharacteristics = (int?)deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.driverCharacteristics;
-            rootIVI.IviField.Optional[1].Giv[0].LayoutId = (long?)deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.layoutId;
-            rootIVI.IviField.Optional[1].Giv[0].PreStoredlayoutId = (long?)deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.preStoredlayoutId;
+            rootIVI.IviField.Optional[1].Giv[0].Direction = (int?)deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.direction;
+            rootIVI.IviField.Optional[1].Giv[0].MinimumAwarenessTime = (int?)deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.minimumAwarenessTime;
+            rootIVI.IviField.Optional[1].Giv[0].IviType = (int)deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.iviType;
+            rootIVI.IviField.Optional[1].Giv[0].IviPurpose = (int?)deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.iviPurpose;
+            rootIVI.IviField.Optional[1].Giv[0].LaneStatus = (long?)deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.laneStatus;
+            rootIVI.IviField.Optional[1].Giv[0].DriverCharacteristics = (int?)deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.driverCharacteristics;
+            rootIVI.IviField.Optional[1].Giv[0].LayoutId = (long?)deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.layoutId;
+            rootIVI.IviField.Optional[1].Giv[0].PreStoredlayoutId = (long?)deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.preStoredlayoutId;
             rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes = new PerEncDec.IVI.IVIModule.RoadSignCodes
             {
                 new PerEncDec.IVI.IVIModule.RSCode()
             };
-            rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].LayoutComponentId = (long?)deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.layoutComponentId;
+            rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].LayoutComponentId = (long?)deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.layoutComponentId;
 
-            //MessageBox.Show(deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823.pictogramCode.serviceCategoryCode.trafficSignPictogram.ToString());
+            //MessageBox.Show(deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823.pictogramCode.serviceCategoryCode.trafficSignPictogram.ToString());
                 
             //Giv//ViennaConvention
-            if (deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.viennaConvention is not null)
+            if (deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.viennaConvention is not null)
             {
                 rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code = new PerEncDec.IVI.IVIModule.RSCode.CodeType();
                 rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.ViennaConvention = new VcCode();
-                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.ViennaConvention.RoadSignClass = (int)deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.viennaConvention.roadSignClass;
-                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.ViennaConvention.RoadSignCode = (int)deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.viennaConvention.roadSignCode;
-                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.ViennaConvention.VcOption = (int)deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.viennaConvention.vcOption;
-                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.ViennaConvention.Value = (int?)deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.viennaConvention.value;
+                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.ViennaConvention.RoadSignClass = (int)deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.viennaConvention.roadSignClass;
+                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.ViennaConvention.RoadSignCode = (int)deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.viennaConvention.roadSignCode;
+                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.ViennaConvention.VcOption = (int)deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.viennaConvention.vcOption;
+                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.ViennaConvention.Value = (int?)deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.viennaConvention.value;
             }
             //Giv//Iso14823
-            else if (deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823 is not null)
+            else if (deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823 is not null)
             {
                 rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code = new PerEncDec.IVI.IVIModule.RSCode.CodeType();
                 rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.Iso14823  = new ISO14823Code();
                 rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.Iso14823.PictogramCode = new ISO14823Code.PictogramCodeType();
                 rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.Iso14823.PictogramCode.CountryCode = null;  //new PerEncDec.Asn1.BitString(countryCodeBits);
                 rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.Iso14823.PictogramCode.ServiceCategoryCode = new ISO14823Code.PictogramCodeType.ServiceCategoryCodeType();
-                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.Iso14823.PictogramCode.ServiceCategoryCode.TrafficSignPictogram = (ISO14823Code.PictogramCodeType.ServiceCategoryCodeType.TrafficSignPictogramType?)deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823.pictogramCode.serviceCategoryCode.trafficSignPictogram;
+                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.Iso14823.PictogramCode.ServiceCategoryCode.TrafficSignPictogram = (ISO14823Code.PictogramCodeType.ServiceCategoryCodeType.TrafficSignPictogramType?)deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823.pictogramCode.serviceCategoryCode.trafficSignPictogram;
                 rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.Iso14823.PictogramCode.PictogramCategoryCode = new ISO14823Code.PictogramCodeType.PictogramCategoryCodeType();
-                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.Iso14823.PictogramCode.PictogramCategoryCode.Nature = deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823.pictogramCode.pictogramCategoryCode.nature;
-                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.Iso14823.PictogramCode.PictogramCategoryCode.SerialNumber = deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823.pictogramCode.pictogramCategoryCode.serialNumber;
+                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.Iso14823.PictogramCode.PictogramCategoryCode.Nature = deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823.pictogramCode.pictogramCategoryCode.nature;
+                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.Iso14823.PictogramCode.PictogramCategoryCode.SerialNumber = deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823.pictogramCode.pictogramCategoryCode.serialNumber;
 
-                if (deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823.attributes is not null)
+                if (deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823.attributes is not null)
                 {
                     rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.Iso14823.Attributes = new ISO14823Attributes();
 
-                    foreach (JSONIvim.Attribute attr in deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823.attributes)
+                    foreach (JSONIvim.Attribute attr in deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.iso14823.attributes)
                     {
                         //DTM
                         if (attr.DTM is not null)
@@ -336,10 +336,10 @@ namespace RSU
                 }
             }
             //Giv//ItsCodes
-            else if (deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.itisCode is not null)
+            else if (deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.itisCode is not null)
             {
                 rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code = new PerEncDec.IVI.IVIModule.RSCode.CodeType();
-                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.ItisCodes = deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.itisCode;
+                rootIVI.IviField.Optional[1].Giv[0].RoadSignCodes[0].Code.ItisCodes = deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.roadSignCodes[0].RSCode.code.itisCode;
             }
 
             rootIVI.IviField.Optional[1].Giv[0].ExtraText = new PerEncDec.IVI.IVIModule.ConstraintTextLines1
@@ -347,7 +347,7 @@ namespace RSU
                 new PerEncDec.IVI.IVIModule.Text()
             };
             rootIVI.IviField.Optional[1].Giv[0].ExtraText[0].Language = new PerEncDec.Asn1.BitString(10);
-            rootIVI.IviField.Optional[1].Giv[0].ExtraText[0].TextContent = deserializedJson.ivi[0].optional[0].IviContainer.giv[0].GicPart.extraText.ToString();
+            rootIVI.IviField.Optional[1].Giv[0].ExtraText[0].TextContent = deserializedJson.ivi.optional[0].IviContainer.giv[0].GicPart.extraText.ToString();
 
 
             //Tc
@@ -357,31 +357,31 @@ namespace RSU
             };
 
             rootIVI.IviField.Optional[2].Tc[0].DetectionZoneIds = new PerEncDec.IVI.IVIModule.ZoneIds();
-            foreach (DetectionZone detectionZone in deserializedJson.ivi[0].optional[0].IviContainer.tc[0].TcPart.DetectionZone)
+            foreach (DetectionZone detectionZone in deserializedJson.ivi.optional[0].IviContainer.tc[0].TcPart.DetectionZone)
             {
                 rootIVI.IviField.Optional[2].Tc[0].DetectionZoneIds.Add(detectionZone.Zid);
             }
 
             rootIVI.IviField.Optional[2].Tc[0].RelevanceZoneIds = new PerEncDec.IVI.IVIModule.ZoneIds();
-            foreach (RelevanceZone relevanceZone in deserializedJson.ivi[0].optional[0].IviContainer.tc[0].TcPart.RelevanceZone)
+            foreach (RelevanceZone relevanceZone in deserializedJson.ivi.optional[0].IviContainer.tc[0].TcPart.RelevanceZone)
             {
                 rootIVI.IviField.Optional[2].Tc[0].RelevanceZoneIds.Add(relevanceZone.Zid);
             }
 
-            rootIVI.IviField.Optional[2].Tc[0].Direction = (int?)deserializedJson.ivi[0].optional[0].IviContainer.tc[0].TcPart.Direction;
-            rootIVI.IviField.Optional[2].Tc[0].MinimumAwarenessTime = (int?)deserializedJson.ivi[0].optional[0].IviContainer.tc[0].TcPart.minimumAwarenessZoneIds;
-            rootIVI.IviField.Optional[2].Tc[0].LayoutId = (long?)deserializedJson.ivi[0].optional[0].IviContainer.tc[0].TcPart.layoutId;
-            rootIVI.IviField.Optional[2].Tc[0].PreStoredlayoutId = (long?)deserializedJson.ivi[0].optional[0].IviContainer.tc[0].TcPart.preStoredlayoutId;
+            rootIVI.IviField.Optional[2].Tc[0].Direction = (int?)deserializedJson.ivi.optional[0].IviContainer.tc[0].TcPart.Direction;
+            rootIVI.IviField.Optional[2].Tc[0].MinimumAwarenessTime = (int?)deserializedJson.ivi.optional[0].IviContainer.tc[0].TcPart.minimumAwarenessZoneIds;
+            rootIVI.IviField.Optional[2].Tc[0].LayoutId = (long?)deserializedJson.ivi.optional[0].IviContainer.tc[0].TcPart.layoutId;
+            rootIVI.IviField.Optional[2].Tc[0].PreStoredlayoutId = (long?)deserializedJson.ivi.optional[0].IviContainer.tc[0].TcPart.preStoredlayoutId;
             rootIVI.IviField.Optional[2].Tc[0].Text = new PerEncDec.IVI.IVIModule.TextLines();
-            //rootIVI.IviField.Optional[0].Tc[0].Text = deserializedJson.ivi[0].optional[0].IviContainer.tc[0].TcPart.text;
-            rootIVI.IviField.Optional[2].Tc[0].Data = BitConverter.GetBytes(deserializedJson.ivi[0].optional[0].IviContainer.tc[0].TcPart.data.Value.Ticks);
+            //rootIVI.IviField.Optional[0].Tc[0].Text = deserializedJson.ivi.optional[0].IviContainer.tc[0].TcPart.text;
+            rootIVI.IviField.Optional[2].Tc[0].Data = BitConverter.GetBytes(deserializedJson.ivi.optional[0].IviContainer.tc[0].TcPart.data.Value.Ticks);
 
 
             PerUnalignedCodec codec = new PerUnalignedCodec();
             byte[] ivib = codec.Encode(rootIVI);
             return ivib;
             //escreve o ficheiro indentificado pelo ID do primeiro IVI dentro desta mensagem IVIM
-            /*File.WriteAllBytes("JSonMessageBin"+ deserializedJson.ivi[0].mandatory.iviIdentificationNumber +".ivi", ivib);
+            /*File.WriteAllBytes("JSonMessageBin"+ deserializedJson.ivi.mandatory.iviIdentificationNumber +".ivi", ivib);
 
             PerEncDec.IVI.IVIMPDUDescriptions.IVIM rootIvi2 = new PerEncDec.IVI.IVIMPDUDescriptions.IVIM();
             codec.Decode(ivib, 0, rootIvi2);

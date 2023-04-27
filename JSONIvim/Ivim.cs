@@ -9,6 +9,6 @@ namespace RSU.JSONIvim
     public class Ivim
     {
         public Header? header { get; set; }
-        public List<Ivi>? ivi { get; set; }
+        public Ivi? ivi { get; set; }
     }
 }

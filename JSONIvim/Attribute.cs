@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,5 +15,7 @@ namespace RSU.JSONIvim
 
         public VED VED { get; set; }
         public DDD DDD { get; set; }
+        public SPE SPE { get; set; }
+
     }
 }

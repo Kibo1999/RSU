@@ -7,7 +7,6 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json.Nodes;
 using System.Threading.Tasks;
-using RSU.JSONIvim;
 using PerEncDec.IVI.IVIMPDUDescriptions;
 
 namespace RSU
@@ -36,7 +35,7 @@ namespace RSU
             Thread thread = new Thread(() =>
             {
                 this.SetTimeStamp();
-                Console.WriteLine($"Timestamp:{unixEpoch.AddMilliseconds((long)this.message.ivim.ivi[0].mandatory.timeStamp)}");
+                Console.WriteLine($"Timestamp:{unixEpoch.AddMilliseconds((long)this.message.ivim.ivi.mandatory.timeStamp)}");
             
 
                 //converte para binário toda a mensagem IVIM
@@ -46,7 +45,7 @@ namespace RSU
 
                 while (true)
                 {
-                    Console.WriteLine($"IVI ID:{this.message.ivim.ivi[0].mandatory.iviIdentificationNumber} ");
+                    Console.WriteLine($"IVI ID:{this.message.ivim.ivi.mandatory.iviIdentificationNumber} ");
                     Thread.Sleep(this.appInterval);
                 }
             });
@@ -55,7 +54,7 @@ namespace RSU
 
         private void SetTimeStamp()
         {
-            this.message.ivim.ivi[0].mandatory.timeStamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
+            this.message.ivim.ivi.mandatory.timeStamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
 
         }
     }
